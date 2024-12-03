@@ -1,3 +1,5 @@
+import { WorldManager } from './world/WorldManager.js';
+
 // Initialize PlayCanvas
 const canvas = document.getElementById('application-canvas');
 const app = new pc.Application(canvas);
@@ -18,21 +20,12 @@ camera.addComponent('script');
 app.root.addChild(camera);
 
 // Position camera
-camera.setPosition(0, 10, 15);
+camera.setPosition(0, 100, 100);
 camera.lookAt(0, 0, 0);
 
-// Create directional light
-const light = new pc.Entity('light');
-light.addComponent('light', {
-    type: 'directional',
-    color: new pc.Color(1, 1, 1),
-    castShadows: true,
-    shadowDistance: 30,
-    shadowResolution: 1024,
-    shadowBias: 0.2
-});
-app.root.addChild(light);
-light.setEulerAngles(45, 30, 0);
+// Initialize world
+const worldManager = new WorldManager(app);
+worldManager.initialize();
 
 // Start the application
 app.start();
