@@ -80,3 +80,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🔄 Development Status
 Currently in active development. See [Projects](https://github.com/jin-hong-0207/Open-world-RPG/projects) tab for current progress.
+
+## 📅 Development Updates
+
+### July 25, 2023
+- Set up world configuration system
+- Working on client-side configuration settings
+- Repository connected to GitHub for version control
