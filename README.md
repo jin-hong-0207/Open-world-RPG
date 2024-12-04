@@ -87,3 +87,11 @@ Currently in active development. See [Projects](https://github.com/jin-hong-0207
 - Set up world configuration system
 - Working on client-side configuration settings
 - Repository connected to GitHub for version control
+
+### July 26, 2023
+- Implemented core game systems (inventory, crafting, and loot systems)
+- Added GitHub Actions workflow for automated testing
+- Restructured test files and added network handler tests
+- Updated project configuration (package.json, jest config)
+- Improved client-side structure with network handling
+- Added Vercel deployment configuration

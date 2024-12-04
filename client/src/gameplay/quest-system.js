@@ -1,4 +1,4 @@
-const { QUEST_CONFIG, QUEST_REQUIREMENTS, QUEST_REWARDS } = require('../quests/quests-config');
+import { QUESTS_CONFIG, QUEST_REQUIREMENTS, QUEST_REWARDS } from '../quests/quests-config';
 
 class QuestSystem {
     constructor(world) {
@@ -261,16 +261,16 @@ class QuestSystem {
     // Helper: Get quest configuration
     getQuestConfig(questId) {
         // Check main quests
-        if (QUEST_CONFIG.mainQuests[questId]) {
-            return QUEST_CONFIG.mainQuests[questId];
+        if (QUESTS_CONFIG.mainQuests[questId]) {
+            return QUESTS_CONFIG.mainQuests[questId];
         }
         // Check side quests
-        if (QUEST_CONFIG.sideQuests[questId]) {
-            return QUEST_CONFIG.sideQuests[questId];
+        if (QUESTS_CONFIG.sideQuests[questId]) {
+            return QUESTS_CONFIG.sideQuests[questId];
         }
         // Check daily quests
-        if (QUEST_CONFIG.dailyQuests[questId]) {
-            return QUEST_CONFIG.dailyQuests[questId];
+        if (QUESTS_CONFIG.dailyQuests[questId]) {
+            return QUESTS_CONFIG.dailyQuests[questId];
         }
         return null;
     }
@@ -305,93 +305,6 @@ class QuestSystem {
         // Dispatch event to relevant systems
         this.world.eventSystem.dispatch(event);
     }
-
-    // Start a new quest
-    startQuest(questId) {
-        const quest = QUEST_CONFIG[questId];
-        if (!quest) {
-            throw new Error(`Quest ${questId} not found`);
-        }
-        
-        if (this.activeQuests.has(questId)) {
-            throw new Error(`Quest ${questId} is already active`);
-        }
-
-        this.activeQuests.set(questId, {
-            quest,
-            progress: quest.objectives.map(obj => ({
-                ...obj,
-                current: 0
-            }))
-        });
-    }
-
-    // Update progress
-    updateProgress(questId, objectiveId, amount = 1) {
-        const questData = this.activeQuests.get(questId);
-        if (!questData) {
-            return false;
-        }
-
-        const objective = questData.progress.find(obj => obj.id === objectiveId);
-        if (!objective) {
-            return false;
-        }
-
-        objective.current += amount;
-        return this.checkQuestCompletion(questId);
-    }
-
-    // Check quest completion
-    checkQuestCompletion(questId) {
-        const questData = this.activeQuests.get(questId);
-        if (!questData) {
-            return false;
-        }
-
-        const completed = questData.progress.every(obj => obj.current >= obj.required);
-        if (completed) {
-            this.completeQuest(questId);
-        }
-        return completed;
-    }
-
-    // Complete quest
-    completeQuest(questId) {
-        const questData = this.activeQuests.get(questId);
-        if (!questData) {
-            return false;
-        }
-
-        this.activeQuests.delete(questId);
-        this.completedQuests.add(questId);
-        return true;
-    }
-
-    // Get quest progress
-    getQuestProgress(questId) {
-        return this.activeQuests.get(questId)?.progress || null;
-    }
-
-    // Is quest completed
-    isQuestCompleted(questId) {
-        return this.completedQuests.has(questId);
-    }
-
-    // Get available quests
-    getAvailableQuests(playerLevel, playerReputation) {
-        return Object.entries(QUEST_CONFIG)
-            .filter(([questId, quest]) => {
-                if (this.activeQuests.has(questId) || this.completedQuests.has(questId)) {
-                    return false;
-                }
-
-                return QUEST_REQUIREMENTS.levelRequirement(playerLevel, quest.level_requirement) &&
-                    (!quest.reputation_requirement || 
-                     QUEST_REQUIREMENTS.reputationRequirement(playerReputation, quest.reputation_requirement));
-            })
-            .map(([_, quest]) => quest);
-    }
 }
 
-module.exports = { QuestSystem };
+export default QuestSystem;

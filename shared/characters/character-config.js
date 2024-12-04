@@ -1,62 +1,134 @@
 // Character Configuration System
-const CHARACTER_CONFIG = {
-    WILLOW: {
-        id: 'willow_archer',
-        name: 'Willow the Archer',
-        type: 'Combat',
-        baseStats: {
-            health: 100,
-            energy: 80,
-            speed: 15
+const CHARACTER_CLASSES = {
+    // Combat Roles
+    combat: {
+        swordsman: {
+            name: "Swordsman",
+            baseStats: {
+                health: 120,
+                mana: 50,
+                stamina: 100,
+                strength: 15,
+                agility: 10,
+                intelligence: 5
+            },
+            weapons: ["one_handed_sword", "two_handed_sword", "shield"],
+            armor: ["light_armor", "heavy_armor"],
+            abilities: ["slash", "parry", "charge"],
+            progression: {
+                specializations: ["knight", "samurai", "warrior"]
+            }
         },
-        abilities: ['precise_shot', 'rapid_fire', 'eagle_eye']
+        archer: {
+            name: "Archer",
+            baseStats: {
+                health: 90,
+                mana: 60,
+                stamina: 110,
+                strength: 8,
+                agility: 15,
+                intelligence: 7
+            },
+            weapons: ["shortbow", "longbow", "crossbow"],
+            armor: ["light_armor", "medium_armor"],
+            abilities: ["quick_shot", "multishot", "trap"],
+            progression: {
+                specializations: ["ranger", "sniper", "scout"]
+            }
+        },
+        mage: {
+            name: "Mage",
+            baseStats: {
+                health: 80,
+                mana: 120,
+                stamina: 70,
+                strength: 4,
+                agility: 6,
+                intelligence: 15
+            },
+            weapons: ["staff", "wand", "grimoire"],
+            armor: ["cloth_armor", "light_armor"],
+            abilities: ["fireball", "frost_nova", "teleport"],
+            progression: {
+                specializations: ["elementalist", "warlock", "sage"]
+            }
+        },
+        healer: {
+            name: "Healer",
+            baseStats: {
+                health: 95,
+                mana: 110,
+                stamina: 80,
+                strength: 5,
+                agility: 7,
+                intelligence: 13
+            },
+            weapons: ["staff", "mace", "tome"],
+            armor: ["cloth_armor", "light_armor"],
+            abilities: ["heal", "regeneration", "blessing"],
+            progression: {
+                specializations: ["priest", "druid", "monk"]
+            }
+        }
     },
-    LEO: {
-        id: 'leo_swordsman',
-        name: 'Leo the Swordsman',
-        type: 'Combat',
-        baseStats: {
-            health: 120,
-            energy: 100,
-            speed: 12
+
+    // Non-Combat Roles
+    noncombat: {
+        craftsman: {
+            name: "Craftsman",
+            baseStats: {
+                health: 100,
+                mana: 40,
+                stamina: 90,
+                crafting: 15,
+                gathering: 10,
+                bartering: 8
+            },
+            tools: ["hammer", "chisel", "saw"],
+            specialties: ["blacksmith", "carpenter", "jeweler"],
+            abilities: ["craft", "repair", "appraise"],
+            progression: {
+                specializations: ["master_smith", "artisan", "engineer"]
+            }
         },
-        abilities: ['slash', 'parry', 'charge']
-    },
-    ARIA: {
-        id: 'aria_healer',
-        name: 'Aria the Healer',
-        type: 'Support',
-        baseStats: {
-            health: 90,
-            energy: 120,
-            speed: 10
+        merchant: {
+            name: "Merchant",
+            baseStats: {
+                health: 85,
+                mana: 30,
+                stamina: 80,
+                crafting: 5,
+                gathering: 7,
+                bartering: 15
+            },
+            tools: ["abacus", "ledger", "cart"],
+            specialties: ["trader", "auctioneer", "shopkeeper"],
+            abilities: ["haggle", "appraise", "network"],
+            progression: {
+                specializations: ["merchant_prince", "guild_master", "broker"]
+            }
         },
-        abilities: ['heal', 'protect', 'revive']
-    },
-    KAI: {
-        id: 'kai_crafter',
-        name: 'Kai the Crafter',
-        type: 'Crafter',
-        baseStats: {
-            health: 95,
-            energy: 90,
-            speed: 11
-        },
-        abilities: ['craft', 'analyze', 'enhance']
-    },
-    MAYA: {
-        id: 'maya_explorer',
-        name: 'Maya the Explorer',
-        type: 'Explorer',
-        baseStats: {
-            health: 100,
-            energy: 100,
-            speed: 13
-        },
-        abilities: ['scout', 'track', 'discover']
+        explorer: {
+            name: "Explorer",
+            baseStats: {
+                health: 95,
+                mana: 45,
+                stamina: 120,
+                exploration: 15,
+                survival: 12,
+                perception: 10
+            },
+            tools: ["map", "compass", "spyglass"],
+            specialties: ["cartographer", "archaeologist", "treasure_hunter"],
+            abilities: ["track", "navigate", "discover"],
+            progression: {
+                specializations: ["pathfinder", "adventurer", "discoverer"]
+            }
+        }
     }
 };
 
+// Predefined Character Templates
 const CHARACTER_TEMPLATES = {
     // Combat Characters
     leo_swordsman: {
@@ -548,8 +620,8 @@ const CHARACTER_PROGRESSION = {
     }
 };
 
-module.exports = {
-    CHARACTER_CONFIG,
+export {
+    CHARACTER_CLASSES,
     CHARACTER_TEMPLATES,
     CUSTOMIZATION_OPTIONS,
     UNLOCKABLE_CONTENT,
