@@ -20,15 +20,8 @@
       "dest": "server/src/index.js"
     },
     {
-      "src": "^/$",
-      "dest": "/client/index.html"
-    },
-    {
-      "src": "/(.+)",
+      "src": "/(.*)",
       "dest": "/client/$1"
     }
-  ],
-  "env": {
-    "PORT": "3001"
-  }
+  ]
 }

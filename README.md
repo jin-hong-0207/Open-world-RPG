@@ -95,3 +95,10 @@ Currently in active development. See [Projects](https://github.com/jin-hong-0207
 - Updated project configuration (package.json, jest config)
 - Improved client-side structure with network handling
 - Added Vercel deployment configuration
+
+### July 27, 2023
+- Implemented puzzle system with server-side logic
+- Added puzzle models, controllers, and routes
+- Restructured server architecture
+- Streamlined client-side code
+- Updated Vercel deployment configuration

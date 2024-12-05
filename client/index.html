@@ -7,39 +7,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- PlayCanvas Engine -->
     <script src="https://code.playcanvas.com/playcanvas-stable.min.js"></script>
-    <style>
-        #loading-screen {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-            z-index: 1000;
-        }
-        
-        .error-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-            z-index: 1000;
-            display: none;
-        }
-    </style>
 </head>
 <body>
-    <canvas id="application-canvas" width="885" height="788"></canvas>
-    <div id="loading-screen">Initializing game engine...</div>
-    <div id="error-message" class="error-message">Failed to initialize game. Please refresh the page.</div>
+    <canvas id="application-canvas"></canvas>
+    <div id="loading-screen">
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
     <script type="module" src="src/main.js"></script>
 </body>
 </html>

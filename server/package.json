@@ -1,0 +1,17 @@
+{
+  "name": "legends-of-auroria-server",
+  "version": "1.0.0",
+  "description": "Backend server for Legends of Auroria game",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
