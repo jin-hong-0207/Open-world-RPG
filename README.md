@@ -83,12 +83,12 @@ Currently in active development. See [Projects](https://github.com/jin-hong-0207
 
 ## 📅 Development Updates
 
-### Day 1 (July 25, 2023)
+### Day 1
 - Set up world configuration system
 - Working on client-side configuration settings
 - Repository connected to GitHub for version control
 
-### Day 2 (July 26, 2023)
+### Day 2
 - Implemented core game systems (inventory, crafting, and loot systems)
 - Added GitHub Actions workflow for automated testing
 - Restructured test files and added network handler tests
@@ -96,14 +96,14 @@ Currently in active development. See [Projects](https://github.com/jin-hong-0207
 - Improved client-side structure with network handling
 - Added Vercel deployment configuration
 
-### Day 3 (July 27, 2023)
+### Day 3
 - Implemented puzzle system with server-side logic
 - Added puzzle models, controllers, and routes
 - Restructured server architecture
 - Streamlined client-side code
 - Updated Vercel deployment configuration
 
-### Day 4 (July 28, 2023)
+### Day 4
 - Implemented comprehensive gamepad control system with multi-controller support
 - Added advanced character animation system with blending and procedural animations
 - Integrated dynamic environment effects (weather, day/night cycle, seasons)
