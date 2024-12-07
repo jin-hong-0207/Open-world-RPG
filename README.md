@@ -102,3 +102,44 @@ Currently in active development. See [Projects](https://github.com/jin-hong-0207
 - Restructured server architecture
 - Streamlined client-side code
 - Updated Vercel deployment configuration
+
+### July 28, 2023
+- Implemented comprehensive gamepad control system with multi-controller support
+- Added advanced character animation system with blending and procedural animations
+- Integrated dynamic environment effects (weather, day/night cycle, seasons)
+- Enhanced visual effects with particle systems and post-processing
+- Implemented cinematic camera system with multiple presets and effects
+- Added HUD elements (minimap, quest tracker, skill icons)
+- Improved UI responsiveness and controller integration
+
+Key Updates:
+1. **Controller Integration**
+   - Multi-controller support (Xbox, PlayStation, Generic)
+   - Customizable button mappings
+   - Deadzone handling
+   - Keyboard fallback input
+
+2. **Animation System**
+   - Advanced character animations with blending
+   - Procedural animation support
+   - Emotive animations
+   - IK system integration
+
+3. **Visual Effects**
+   - Dynamic weather system (rain, snow, fog)
+   - Day/night cycle
+   - Seasonal changes
+   - Particle effects (dust, fireflies)
+   - Water simulation
+
+4. **Camera System**
+   - Multiple camera presets
+   - Smooth transitions
+   - Cinematic effects
+   - Dynamic following and orbiting
+
+5. **UI Enhancements**
+   - Interactive minimap
+   - Quest tracking system
+   - Custom skill icons
+   - Controller-adaptive UI

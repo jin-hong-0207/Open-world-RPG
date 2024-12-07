@@ -1,0 +1,222 @@
+/* Controller Prompts */
+.controller-prompt {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 12px;
+    border-radius: 20px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.prompt-label {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Aim Reticle */
+.aim-reticle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+}
+
+.reticle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.reticle-line {
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.reticle-line.top,
+.reticle-line.bottom {
+    width: 2px;
+    height: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.reticle-line.top {
+    top: 0;
+}
+
+.reticle-line.bottom {
+    bottom: 0;
+}
+
+.reticle-line.left,
+.reticle-line.right {
+    height: 2px;
+    width: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.reticle-line.left {
+    left: 0;
+}
+
+.reticle-line.right {
+    right: 0;
+}
+
+/* Tutorial Overlay */
+.tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.tutorial-overlay.hidden {
+    display: none;
+}
+
+.tutorial-content {
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.tutorial-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.control-section {
+    margin-bottom: 25px;
+}
+
+.control-section h3 {
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.control-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+}
+
+.control-item span {
+    font-size: 16px;
+    color: #fff;
+}
+
+.tutorial-close {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tutorial-close:hover {
+    background: #357abd;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Controller-specific styles */
+.using-controller .keyboard-prompt {
+    display: none;
+}
+
+.using-controller .controller-prompt {
+    display: flex;
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Hover effects */
+.controller-prompt:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tutorial-content {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .control-item {
+        padding: 8px;
+    }
+
+    .control-item img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .control-item span {
+        font-size: 14px;
+    }
+}
